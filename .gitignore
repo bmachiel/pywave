@@ -1,0 +1,6 @@
+build
+dist
+pywave.egg-info
+pywave/version.py
+*.pyc
+*~

@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<resource>
+  <component class="Component" name="wxSearchCtrl">
+    <groups>
+      <item>control</item>
+    </groups>
+    <attributes>
+      <item>pos</item>
+      <item>size</item>
+      <item>value</item>
+    </attributes>
+    <has-name>1</has-name>
+    <styles>
+      <item>wxTE_PROCESS_ENTER</item>
+      <item>wxTE_PROCESS_TAB</item>
+      <item>wxTE_NOHIDESEL</item>
+      <item>wxTE_LEFT</item>
+      <item>wxTE_CENTRE</item>
+      <item>wxTE_RIGHT</item>
+      <item>wxTE_CAPITALIZE</item>
+    </styles>
+    <events>
+      <item>EVT_SEARCHCTRL_SEARCH_BTN</item>
+      <item>EVT_SEARCHCTRL_CANCEL_BTN</item>
+      <item>EVT_TEXT</item>
+      <item>EVT_TEXT_ENTER</item>
+    </events>
+    <module>xh_searchctrl</module>
+    <handler>SearchCtrlXmlHandler</handler>
+    <menu>control</menu>
+    <label>search control</label>
+    <index>10</index>
+  </component>
+</resource>

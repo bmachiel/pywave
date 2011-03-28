@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<resource>
+  <object class="wxFrame" name="MainFrame">
+    <object class="wxMenuBar" name="menuBar">
+      <object class="wxMenu" name="fileMenu">
+        <label>File</label>
+        <object class="wxMenuItem" name="fileOpenMenuItem">
+          <label>Open</label>
+          <help>Open file</help>
+          <XRCED>
+            <events>EVT_MENU</events>
+          </XRCED>
+        </object>
+        <object class="wxMenuItem" name="fileReloadMenuItem">
+          <label>Reload</label>
+          <help>Reload file</help>
+          <XRCED>
+            <events>EVT_MENU</events>
+          </XRCED>
+        </object>
+        <object class="wxMenuItem" name="fileCloseMenuItem">
+          <label>Close</label>
+          <help>Close file</help>
+          <XRCED>
+            <events>EVT_MENU</events>
+          </XRCED>
+        </object>
+        <object class="wxMenuItem" name="exitMenuItem">
+          <label>Exit</label>
+          <XRCED>
+            <events>EVT_MENU</events>
+          </XRCED>
+          <help>Exit pyWave</help>
+        </object>
+      </object>
+      <object class="wxMenu" name="viewMenu">
+        <label>View</label>
+        <object class="wxMenuItem" name="viewNewMenuItem">
+          <label>New</label>
+          <help>Create a new view</help>
+          <XRCED>
+            <events>EVT_MENU</events>
+          </XRCED>
+        </object>
+        <object class="wxMenuItem" name="viewCloseMenuItem">
+          <label>Close</label>
+          <help>Close the current view</help>
+          <XRCED>
+            <events>EVT_MENU</events>
+          </XRCED>
+        </object>
+        <object class="wxMenuItem" name="viewRenameMenuItem">
+          <label>Rename</label>
+          <help>Rename the current view</help>
+          <XRCED>
+            <events>EVT_MENU</events>
+          </XRCED>
+        </object>
+      </object>
+      <object class="wxMenu" name="helpMenu">
+        <label>Help</label>
+        <object class="wxMenuItem" name="aboutMenuItem">
+          <label>About</label>
+          <help>About pyWave</help>
+          <XRCED>
+            <events>EVT_MENU</events>
+          </XRCED>
+        </object>
+      </object>
+    </object>
+    <object class="wxToolBar" name="toolBar">
+      <object class="tool" name="fileOpenTool">
+        <bitmap stock_id="wxART_FILE_OPEN"/>
+        <tooltip>Open file</tooltip>
+        <longhelp>Open file</longhelp>
+        <XRCED>
+          <events>EVT_TOOL</events>
+        </XRCED>
+      </object>
+      <object class="tool" name="fileReloadTool">
+        <bitmap stock_id="wxART_REDO"/>
+        <tooltip>Reload file</tooltip>
+        <longhelp>Reload file from disk</longhelp>
+        <XRCED>
+          <events>EVT_TOOL</events>
+        </XRCED>
+      </object>
+      <object class="tool" name="fileCloseTool">
+        <bitmap stock_id="wxART_CROSS_MARK"/>
+        <tooltip>Close file</tooltip>
+        <longhelp>Close file</longhelp>
+        <XRCED>
+          <events>EVT_TOOL</events>
+        </XRCED>
+      </object>
+      <object class="separator"/>
+      <object class="tool" name="viewNewTool">
+        <bitmap stock_id="wxART_ADD_BOOKMARK"/>
+        <tooltip>New view</tooltip>
+        <longhelp>New view</longhelp>
+        <XRCED>
+          <events>EVT_TOOL</events>
+        </XRCED>
+      </object>
+      <object class="tool" name="viewCloseTool">
+        <bitmap stock_id="wxART_DEL_BOOKMARK"/>
+        <tooltip>Close view</tooltip>
+        <longhelp>Close view</longhelp>
+        <XRCED>
+          <events>EVT_TOOL</events>
+        </XRCED>
+      </object>
+    </object>
+    <object class="wxBoxSizer">
+      <object class="sizeritem">
+        <object class="wxSplitterWindow" name="verticalSplitterWindow">
+          <object class="wxSplitterWindow" name="mainSplitterWindow">
+            <object class="wxPanel" name="leftPanel">
+              <object class="wxBoxSizer">
+                <orient>wxHORIZONTAL</orient>
+                <object class="sizeritem">
+                  <object class="wxBoxSizer">
+                    <orient>wxVERTICAL</orient>
+                    <object class="sizeritem">
+                      <object class="wxChoice" name="fileChoice">
+                        <XRCED>
+                          <events>EVT_CHOICE</events>
+                          <assign_var>1</assign_var>
+                        </XRCED>
+                      </object>
+                      <option>0</option>
+                      <flag>wxEXPAND</flag>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="wxSplitterWindow" name="fileSplitterWindow">
+                        <object class="wxPanel">
+                          <object class="wxBoxSizer">
+                            <orient>wxVERTICAL</orient>
+                            <object class="sizeritem">
+                              <object class="wxStaticText" name="fileTreeStaticText">
+                                <label>circuit hierarchy</label>
+                                <style>wxALIGN_CENTRE</style>
+                              </object>
+                              <option>0</option>
+                              <flag>wxEXPAND</flag>
+                              <border>5</border>
+                            </object>
+                            <object class="sizeritem">
+                              <object class="wxTreeCtrl" name="fileTreeCtrl">
+                                <XRCED>
+                                  <events>EVT_TREE_SEL_CHANGED</events>
+                                  <assign_var>1</assign_var>
+                                </XRCED>
+                              </object>
+                              <option>1</option>
+                              <flag>wxEXPAND</flag>
+                            </object>
+                          </object>
+                        </object>
+                        <object class="wxPanel">
+                          <object class="wxBoxSizer">
+                            <orient>wxVERTICAL</orient>
+                            <object class="sizeritem">
+                              <object class="wxStaticText" name="signalListStaticText">
+                                <label>signals</label>
+                                <style>wxALIGN_CENTRE</style>
+                              </object>
+                              <option>0</option>
+                              <flag>wxEXPAND</flag>
+                            </object>
+                            <object class="sizeritem">
+                              <object class="wxListBox" name="signalListBox">
+                                <XRCED>
+                                  <events>EVT_LISTBOX_DCLICK</events>
+                                  <assign_var>1</assign_var>
+                                </XRCED>
+                              </object>
+                              <option>1</option>
+                              <flag>wxEXPAND</flag>
+                            </object>
+                            <object class="sizeritem">
+                              <object class="wxSearchCtrl" name="filterSearchCtrl">
+                                <XRCED>
+                                  <events>EVT_SEARCHCTRL_CANCEL_BTN|EVT_TEXT</events>
+                                  <assign_var>1</assign_var>
+                                </XRCED>
+                              </object>
+                              <option>0</option>
+                              <flag>wxEXPAND</flag>
+                            </object>
+                          </object>
+                        </object>
+                        <orientation>horizontal</orientation>
+                        <minsize>200</minsize>
+                        <style>wxSP_NOBORDER|wxSP_LIVE_UPDATE</style>
+                      </object>
+                      <option>1</option>
+                      <flag>wxEXPAND</flag>
+                      <border>0</border>
+                    </object>
+                  </object>
+                  <option>1</option>
+                  <flag>wxEXPAND</flag>
+                </object>
+              </object>
+              <style>wxNO_BORDER</style>
+            </object>
+            <object class="wxPanel" name="rightPanel">
+              <object class="wxBoxSizer">
+                <orient>wxVERTICAL</orient>
+                <object class="sizeritem">
+                  <object class="wxNotebook" name="viewNotebook">
+                    <XRCED>
+                      <assign_var>1</assign_var>
+                    </XRCED>
+                  </object>
+                  <option>1</option>
+                  <flag>wxEXPAND</flag>
+                  <minsize>600</minsize>
+                </object>
+              </object>
+              <style>wxNO_BORDER</style>
+            </object>
+            <orientation>vertical</orientation>
+            <sashpos>200</sashpos>
+            <minsize>200</minsize>
+            <style>wxNO_BORDER|wxSP_LIVE_UPDATE</style>
+          </object>
+          <object class="wxNotebook" name="bottomNotebook">
+            <object class="notebookpage">
+              <object class="wxPanel" name="sweepsPanel">
+                <object class="wxBoxSizer">
+                  <orient>wxVERTICAL</orient>
+                  <object class="sizeritem">
+                    <object class="wxListCtrl" name="sweepListCtrl">
+                      <style>wxLC_REPORT|wxLC_SINGLE_SEL</style>
+                      <XRCED>
+                        <assign_var>1</assign_var>
+                      </XRCED>
+                    </object>
+                    <option>1</option>
+                    <flag>wxEXPAND</flag>
+                  </object>
+                </object>
+              </object>
+              <label>Sweeps</label>
+            </object>
+            <object class="notebookpage">
+              <object class="wxPanel" name="shellPanel"/>
+              <label>Shell</label>
+            </object>
+            <style>wxNB_BOTTOM</style>
+          </object>
+          <orientation>horizontal</orientation>
+          <sashpos>-150</sashpos>
+          <minsize>150</minsize>
+          <style>wxSP_NOBORDER|wxSP_LIVE_UPDATE</style>
+        </object>
+        <option>1</option>
+        <flag>wxEXPAND</flag>
+      </object>
+      <orient>wxVERTICAL</orient>
+    </object>
+    <object class="wxStatusBar" name="statusBar">
+      <fields>1</fields>
+    </object>
+    <title>pyWave</title>
+  </object>
+</resource>
